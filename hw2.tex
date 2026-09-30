@@ -1,0 +1,110 @@
+\documentclass[a4paper]{exam}
+
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{wasysym}
+
+\usepackage{xcolor}
+\usepackage{wasysym}
+
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+
+\usetikzlibrary{automata, positioning, arrows}
+\tikzset{
+  ->,  % makes the edges directed
+  >=stealth, % makes the arrow heads bold
+  node distance=2cm, % specifies the minimum distance between two nodes. 
+  every state/.style={thick, fill=gray!10}, % sets the properties for each ’state’ node
+  initial text=$ $, % sets the text that appears on the start arrow 
+}
+% Header and footer.
+\pagestyle{headandfoot}
+\runningheadrule
+\runningfootrule
+\runningheader{CS 212}{HW 02: Pumping Lemma, Context Free Languages}{Fall 2025}
+\runningfooter{}{Page \thepage\ of \numpages}{}
+\firstpageheader{}{}{}
+
+
+\newcommand{\shuffle}{\textsc{shuffle}} % Use \shuffle typeset this operator.
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+
+\title{Homework 02: Pumping Lemma, Context Free Languages}
+\author{CS 212 Nature of Computation\\Habib University\\
+% student1 - student1ID % Please enter your name and ID here
+% student2 - student2ID % Please enter your name and ID here
+}
+\date{Fall 2026}
+
+\boxedpoints
+
+
+% \printanswers % Uncomment this line
+
+\begin{document}
+\maketitle
+
+
+\begin{questions}
+
+    \question[10] 
+    \begin{definition}[Shuffle Operator]
+        Let $L \subseteq \{0,1\}^*$ be a some language. The operator $\shuffle$ is defined as, $\shuffle(L) = \{w\in \{0,1\}^*\mid \exists x \in L \;s.t. \; w \text{ is obtained by shuffling the characters of } x\}$. More formally, $\shuffle(L) = \{w = w_1w_2\dots w_n\in \{0,1\}^*\mid \exists x = x_1x_2 \dots x_n \in L, \;s.t.\; \forall w_i !\exists x_j : w_i = x_j\}$. 
+    \end{definition}
+
+    In HW1 we saw that if $L$ is a regular then $\shuffle(L)$ isn't necessarily regular. For this we showed that $\shuffle((01)^+)$ is not regular. But for regular $L$ is $\shuffle(L)$ always context free?
+    
+    Prove or disprove the following claim: $\shuffle((01)^+)$ is context free. 
+
+    \begin{solution}
+        % Enter your solution here.
+    \end{solution}
+
+
+
+  
+    \question Your friend Abbas is in a Tom and Jerry-esque situation with a rat. Where he tries to catch the rat and the rat keeps outsmarting him. To taunt Abbas, every time the rat runs out to steal some cheese it yells out its catchphrase which is of form ``\emph{RRRRRAAAAATTTT}'' given by the RegEx $R^+A^+T^+$. Now Abbas, in a very Wile e Coyote-like fashion makes a contraption to catch the rat. The contraption has a DFA that recognizes the rat's catch phrase in order to detect the rat running around. The rat being much smarter than Abbas decides to modify its catchphrase slightly such that such that it's catchphrase is no longer regular, so its not detected by Abbas's machine. The new catch phrase is defined as $R^iA^jT^k$ where $i,j,k \in \mathbb{Z}^+$ and $i \neq 1$ or $j = k$.
+    \begin{parts}
+        \part[10] The rat graduated Habib University in 2021 with a CS degree, back in those days Nature of Computation was not a mandatory course. Due to this the rat doesn't know the pumping lemma. 
+        Without using pumping lemma show that the following language $L_R$ is not regular:
+        $L_R = \{R^iA^jT^k|\; i,j,k \in \mathbb{Z}^+ \text{ and } i \neq 1 \text{ or } j = k\}$.
+        \begin{solution}
+            % Enter solution here
+        \end{solution}
+
+        \part[10] Abbas however has taken the Nature of Computation course, he knows that the set of context free languages is a superset of regular languages. He conjectures that the new language the rat is using to taunt him might be context free and he may be able to make \href{https://en.wikipedia.org/wiki/Pushdown_automaton}{a different model of computation} for it. Prove or disprove the claim that the language, 
+        $L_R = \{R^iA^jT^k|\; i,j,k \in \mathbb{Z}^+ \text{ and } i \neq 1 \text{ or } j = k\}$, is context-free.
+        \begin{solution}
+            % Enter solution here
+        \end{solution}
+
+    \end{parts}
+
+
+
+    \question[10] Your friend Khubaib and Munawwar wish to evade taxes. Khubaib and Munawwar have decided to come up with a secret language to have all their embezzlement related correspondence in. As the tax auditor, uses a DFA to check for any suspicious activities, the language Khubaib and Munawwar come up with should not be regular. You were able to help them by giving them a language that you believe is not regular. You define the language as follows: $L_{\text{tax evasion}} = \{ w \in \{1, \smiley \}^* \mid w = w_1\smiley w_2\smiley \dots \smiley w_k \text{ for } k \geq 0, \text{ each } w_i \in 1^*, \text{ and } w_i \neq w_j \text{ for } i \neq j \}$. Prove or disprove that $L_{\text{tax evasion}}$ is not regular.
+
+    % Use \smiley to write smile face emoji
+    \begin{solution}
+        % Enter solution here
+    \end{solution}
+  
+  
+\end{questions}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+
+
